@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DAE8866281856F00026AAC8 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE885E281856EF0026AAC8 /* Inter-Bold.ttf */; };
+		9DAE8867281856F00026AAC8 /* Inter-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE885F281856EF0026AAC8 /* Inter-SemiBoldItalic.ttf */; };
+		9DAE8868281856F00026AAC8 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE8860281856EF0026AAC8 /* Inter-ExtraBold.ttf */; };
+		9DAE8869281856F00026AAC8 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE8861281856EF0026AAC8 /* Inter-Medium.ttf */; };
+		9DAE886A281856F00026AAC8 /* Inter-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE8862281856EF0026AAC8 /* Inter-MediumItalic.ttf */; };
+		9DAE886B281856F00026AAC8 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE8863281856F00026AAC8 /* Inter-SemiBold.ttf */; };
+		9DAE886C281856F00026AAC8 /* Inter-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE8864281856F00026AAC8 /* Inter-Italic.ttf */; };
+		9DAE886D281856F00026AAC8 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE8865281856F00026AAC8 /* Inter-Regular.ttf */; };
 		E41C2061281396400050F916 /* Schedule_BuilderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C2060281396400050F916 /* Schedule_BuilderApp.swift */; };
 		E41C2063281396400050F916 /* Survey1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C2062281396400050F916 /* Survey1.swift */; };
 		E41C2068281396420050F916 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E41C2067281396420050F916 /* Preview Assets.xcassets */; };
@@ -18,17 +26,17 @@
 		E4AC3E112815EBA6003C08F3 /* cs326View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E102815EBA6003C08F3 /* cs326View.swift */; };
 		E4AC3E14281603BC003C08F3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E13281603BC003C08F3 /* Settings.swift */; };
 		E4AC3E16281603C7003C08F3 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E15281603C7003C08F3 /* Schedule.swift */; };
-		EECFEC1928185570004FA360 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECFEC102818556F004FA360 /* Inter-Regular.ttf */; };
-		EECFEC1A28185570004FA360 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECFEC112818556F004FA360 /* Inter-SemiBold.ttf */; };
-		EECFEC1B28185570004FA360 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECFEC122818556F004FA360 /* Inter-ExtraBold.ttf */; };
-		EECFEC1C28185570004FA360 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECFEC132818556F004FA360 /* Inter-Medium.ttf */; };
-		EECFEC1D28185570004FA360 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECFEC142818556F004FA360 /* Inter-Bold.ttf */; };
-		EECFEC1F28185570004FA360 /* Inter-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECFEC1628185570004FA360 /* Inter-Italic.ttf */; };
-		EECFEC2028185570004FA360 /* Inter-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECFEC1728185570004FA360 /* Inter-BoldItalic.ttf */; };
-		EECFEC2128185570004FA360 /* Inter-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECFEC1828185570004FA360 /* Inter-MediumItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9DAE885E281856EF0026AAC8 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		9DAE885F281856EF0026AAC8 /* Inter-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		9DAE8860281856EF0026AAC8 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9DAE8861281856EF0026AAC8 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		9DAE8862281856EF0026AAC8 /* Inter-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-MediumItalic.ttf"; sourceTree = "<group>"; };
+		9DAE8863281856F00026AAC8 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		9DAE8864281856F00026AAC8 /* Inter-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Italic.ttf"; sourceTree = "<group>"; };
+		9DAE8865281856F00026AAC8 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		E41C205D281396400050F916 /* Schedule Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Schedule Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41C2060281396400050F916 /* Schedule_BuilderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule_BuilderApp.swift; sourceTree = "<group>"; };
 		E41C2062281396400050F916 /* Survey1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey1.swift; sourceTree = "<group>"; };
@@ -43,14 +51,6 @@
 		E4AC3E102815EBA6003C08F3 /* cs326View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cs326View.swift; sourceTree = "<group>"; };
 		E4AC3E13281603BC003C08F3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E4AC3E15281603C7003C08F3 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
-		EECFEC102818556F004FA360 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "../../../../../Desktop/Inter-Regular.ttf"; sourceTree = "<group>"; };
-		EECFEC112818556F004FA360 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-SemiBold.ttf"; path = "../../../../../Desktop/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
-		EECFEC122818556F004FA360 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraBold.ttf"; path = "../../../../../Desktop/Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
-		EECFEC132818556F004FA360 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Medium.ttf"; path = "../../../../../Desktop/Inter-Medium.ttf"; sourceTree = "<group>"; };
-		EECFEC142818556F004FA360 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../../../../Desktop/Inter-Bold.ttf"; sourceTree = "<group>"; };
-		EECFEC1628185570004FA360 /* Inter-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Italic.ttf"; path = "../../../../../Desktop/Inter-Italic.ttf"; sourceTree = "<group>"; };
-		EECFEC1728185570004FA360 /* Inter-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-BoldItalic.ttf"; path = "../../../../../Desktop/Inter-BoldItalic.ttf"; sourceTree = "<group>"; };
-		EECFEC1828185570004FA360 /* Inter-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-MediumItalic.ttf"; path = "../../../../../Desktop/Inter-MediumItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,14 +104,14 @@
 		E41C206E2813A2460050F916 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				EECFEC142818556F004FA360 /* Inter-Bold.ttf */,
-				EECFEC1728185570004FA360 /* Inter-BoldItalic.ttf */,
-				EECFEC122818556F004FA360 /* Inter-ExtraBold.ttf */,
-				EECFEC1628185570004FA360 /* Inter-Italic.ttf */,
-				EECFEC132818556F004FA360 /* Inter-Medium.ttf */,
-				EECFEC1828185570004FA360 /* Inter-MediumItalic.ttf */,
-				EECFEC102818556F004FA360 /* Inter-Regular.ttf */,
-				EECFEC112818556F004FA360 /* Inter-SemiBold.ttf */,
+				9DAE885E281856EF0026AAC8 /* Inter-Bold.ttf */,
+				9DAE8860281856EF0026AAC8 /* Inter-ExtraBold.ttf */,
+				9DAE8864281856F00026AAC8 /* Inter-Italic.ttf */,
+				9DAE8861281856EF0026AAC8 /* Inter-Medium.ttf */,
+				9DAE8862281856EF0026AAC8 /* Inter-MediumItalic.ttf */,
+				9DAE8865281856F00026AAC8 /* Inter-Regular.ttf */,
+				9DAE8863281856F00026AAC8 /* Inter-SemiBold.ttf */,
+				9DAE885F281856EF0026AAC8 /* Inter-SemiBoldItalic.ttf */,
 				E429413F2814C1EA0086D7FE /* Inter-SemiBoldItalic.ttf */,
 			);
 			path = Fonts;
@@ -214,17 +214,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EECFEC1F28185570004FA360 /* Inter-Italic.ttf in Resources */,
-				EECFEC1A28185570004FA360 /* Inter-SemiBold.ttf in Resources */,
-				EECFEC2028185570004FA360 /* Inter-BoldItalic.ttf in Resources */,
-				EECFEC1B28185570004FA360 /* Inter-ExtraBold.ttf in Resources */,
+				9DAE886A281856F00026AAC8 /* Inter-MediumItalic.ttf in Resources */,
 				E42941412814C1EA0086D7FE /* Inter-SemiBoldItalic.ttf in Resources */,
-				EECFEC1C28185570004FA360 /* Inter-Medium.ttf in Resources */,
-				EECFEC1D28185570004FA360 /* Inter-Bold.ttf in Resources */,
 				E41C2068281396420050F916 /* Preview Assets.xcassets in Resources */,
+				9DAE886B281856F00026AAC8 /* Inter-SemiBold.ttf in Resources */,
+				9DAE8866281856F00026AAC8 /* Inter-Bold.ttf in Resources */,
+				9DAE886C281856F00026AAC8 /* Inter-Italic.ttf in Resources */,
 				E44E3B1B2814795100761DDD /* Color Assets.xcassets in Resources */,
-				EECFEC2128185570004FA360 /* Inter-MediumItalic.ttf in Resources */,
-				EECFEC1928185570004FA360 /* Inter-Regular.ttf in Resources */,
+				9DAE8869281856F00026AAC8 /* Inter-Medium.ttf in Resources */,
+				9DAE886D281856F00026AAC8 /* Inter-Regular.ttf in Resources */,
+				9DAE8867281856F00026AAC8 /* Inter-SemiBoldItalic.ttf in Resources */,
+				9DAE8868281856F00026AAC8 /* Inter-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +383,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -416,6 +417,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
