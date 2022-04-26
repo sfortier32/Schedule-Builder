@@ -38,7 +38,7 @@ struct Launch: View {
                 
                 //Image
                 VStack {
-                    Image("homePic")
+                    
                         .resizable()
                         .frame(width: 300, height: 220)
                         .padding(.top, 40)
