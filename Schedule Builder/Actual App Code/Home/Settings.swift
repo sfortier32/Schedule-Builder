@@ -27,20 +27,17 @@ struct Settings: View {
                     .frame(width: 430, height: 220)
                     .position(x: 206, y: 50)
                 Rectangle()
-                    .fill(.blue)
-                    .frame(width: 430, height: 700)
+                    .fill(Color.lightBlue)
+                    .frame(width: 430, height: 600)
                     .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: -5)
-                
-                Rectangle()
-                    .fill(Color.navBarGray)
-                    .frame(width: 420, height: 50)
-                    .position(x: 210, y: 850)
+                    .padding(.top, 100)
                 
                 Group {
                     Rectangle()
-                        .frame(width: 420, height: 100)
+                        .frame(width: 420, height: 110)
                         .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: -5)
                         .foregroundColor(.navBarGray)
+                        .position(x: 212, y: 800)
                         .overlay(
                             HStack {
                                 Button(action: {
@@ -71,9 +68,10 @@ struct Settings: View {
                                 }
                             }.padding(sides: [.left, .right], value: 75)
                                 .padding(.bottom, 20)
+                                .position(x: 212, y: 800)
                         )
-                }.position(x: 207, y: 800)
-                
+                }
+   
             }
         case "Homepage" :
             Homepage()
