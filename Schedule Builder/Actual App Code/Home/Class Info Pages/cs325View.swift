@@ -1,5 +1,5 @@
 //
-//  cs326View.swift
+//  cs325View.swift
 //  Schedule Builder
 //
 //  Created by Sophia Fortier on 4/24/22.
