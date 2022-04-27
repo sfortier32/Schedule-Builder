@@ -292,22 +292,4 @@ struct RecCards: View {
     }
 }
 
-// Move these to another file when finished
 
-struct cs326View: View {
-    var body: some View {
-        Text("CS 326")
-    }
-}
-
-struct cs490uView: View {
-    var body: some View {
-        Text("CS 490U")
-    }
-}
-
-struct info203View: View {
-    var body: some View {
-        Text("Info 203")
-    }
-}

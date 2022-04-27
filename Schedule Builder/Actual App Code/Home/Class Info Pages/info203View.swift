@@ -1,5 +1,5 @@
 //
-//  cs325View.swift
+//  info203View.swift
 //  Schedule Builder
 //
 //  Created by Sophia Fortier on 4/26/22.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct cs326View_Preview : PreviewProvider {
+struct info203View_Preview : PreviewProvider {
     static var previews: some View {
-        cs326View()
+        info203View()
     }
 }
 
-struct cs326View: View {
+struct info203View: View {
     var body: some View {
         ZStack {
             BackgroundRect()
@@ -26,19 +26,17 @@ struct cs326View: View {
                             Text("Description: ")
                                 .font(.custom("Inter-SemiBold", size: 20))
                                 .padding(.bottom, 1)
-                            Text("Human-Computer Interaction design is “design for human use”. Computers are a ubiquitous part of many interactions in our lives, from the mundane everydayness of light switches and “smart” vending machines to entertainment and education to sophisticated instruments and complex energy and defense systems. In this course, we will challenge you to broaden your grasp of what a user interface can and should be, and try your hand at doing better yourself. It is a fast-paced, hands-on, project-based experience that will challenge many of your ideas of what computer science is and can be. The design thinking process draws heavily on the fundamentals of human-computer interaction (HCI) methods. I also cover design methodologies, evaluation methodologies (both quantitative and qualitative), human information processing, cognition, and perception.")
+                        Text("Human-Computer Interaction design is “design for human use”. Computers are a ubiquitous part of many interactions in our lives, from the mundane everydayness of light switches and “smart” vending machines to entertainment and education to sophisticated instruments and complex energy and defense systems. In this course, we will challenge you to broaden your grasp of what a user interface can and should be, and try your hand at doing better yourself. It is a fast-paced, hands-on, project-based experience that will challenge many of your ideas of what computer science is and can be. The design thinking process draws heavily on the fundamentals of human-computer interaction (HCI) methods. I also cover design methodologies, evaluation methodologies (both quantitative and qualitative), human information processing, cognition, and perception.")
                                 .font(.custom("Inter-Regular", size: 17))
-                        
                             Text("Seats:")
                                 .font(.custom("Inter-SemiBold", size: 20))
                                 .padding([.top, .bottom], 1)
                             Text("16 Available\n110 Seats")
                             .padding(.bottom, 1)
-                        
-                            Text("Information: ")
+                            Text("Time and Location: ")
                                 .font(.custom("Inter-SemiBold", size: 20))
                                 .padding([.top, .bottom], 1)
-                            Text("Cheryl Swanier\nTuesday, Thursday\n4:00pm - 5:15pm @ ILC S131")
+                            Text("Tuesday, Thursday\n4:00pm - 5:15pm @ ILC S131")
                         
                             VStack(alignment: .leading) {
                                 Text("Ratings:")
@@ -60,7 +58,7 @@ struct cs326View: View {
             
             VStack {
                 HStack {
-                    Text("CS 326: Intro to\nHuman-Computer Interaction")
+                    Text("Info 203: Intro to\nHuman-Computer Interaction")
                         .font(.custom("Inter-Bold", size: 30))
                         .foregroundColor(.recGray)
                     Spacer()

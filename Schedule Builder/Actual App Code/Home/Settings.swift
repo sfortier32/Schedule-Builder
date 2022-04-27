@@ -21,23 +21,21 @@ struct Settings: View {
         switch showView {
         case "Settings":
             ZStack {
+                HStack {
+                    Text("Settings")
+                        .font(.custom("Inter-SemiBold", size: 30))
+                }
                 
                 Rectangle()
-                    .fill(.white)
-                    .frame(width: 430, height: 220)
-                    .position(x: 206, y: 50)
-                Rectangle()
-                    .fill(Color.lightBlue)
-                    .frame(width: 430, height: 600)
-                    .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: -5)
-                    .padding(.top, 100)
+                    .fill(Color.navBarGray)
+                    .frame(width: 420, height: 50)
+                    .position(x: 200, y: 850)
                 
                 Group {
                     Rectangle()
-                        .frame(width: 420, height: 110)
+                        .frame(width: 420, height: 100)
                         .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: -5)
                         .foregroundColor(.navBarGray)
-                        .position(x: 212, y: 800)
                         .overlay(
                             HStack {
                                 Button(action: {
@@ -68,11 +66,9 @@ struct Settings: View {
                                 }
                             }.padding(sides: [.left, .right], value: 75)
                                 .padding(.bottom, 20)
-                                .position(x: 212, y: 800)
                         )
-                }
-   
-            }
+                }.position(x: 207, y: 800)
+            } //end zstack
         case "Homepage" :
             Homepage()
         case "Schedule" :

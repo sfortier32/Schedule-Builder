@@ -2,22 +2,23 @@
 //  cs325View.swift
 //  Schedule Builder
 //
-//  Created by Sophia Fortier on 4/26/22.
+//  Created by Sophia Fortier on 4/24/22.
 //
 
 import SwiftUI
 
-struct cs326View_Preview : PreviewProvider {
-    static var previews: some View {
-        cs326View()
+struct cs325View_Preview : PreviewProvider {
+    static var previews : some View {
+        cs325View()
     }
 }
 
-struct cs326View: View {
+
+struct cs325View: View {
     var body: some View {
         ZStack {
             BackgroundRect()
-                .background(LinearGradient(gradient: Gradient(colors: [.blue1, .blue2]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all))
+                .background(LinearGradient(gradient: Gradient(colors: [.green1, .teal1]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all))
                 .foregroundColor(.white)
             
             HStack {
@@ -40,17 +41,18 @@ struct cs326View: View {
                                 .padding([.top, .bottom], 1)
                             Text("Cheryl Swanier\nTuesday, Thursday\n4:00pm - 5:15pm @ ILC S131")
                         
-                            VStack(alignment: .leading) {
-                                Text("Ratings:")
-                                    .font(.custom("Inter-SemiBold", size: 20))
-                                    .padding([.top, .bottom], 1)
-                                HStack {
-                                    Text("Professor\n4.7")
-                                    Spacer()
-                                    Text("Class\n4.5")
-                                    Spacer()
-                                }
+                        VStack(alignment: .leading) {
+                            Text("Ratings:")
+                                .font(.custom("Inter-SemiBold", size: 20))
+                                .padding([.top, .bottom], 1)
+                            HStack {
+                                Text("Professor\n4.7")
+                                Spacer()
+                                Text("Class\n4.5")
+                                Spacer()
                             }
+                        }
+                            
                     }.frame(height: 565)
                         .frame(maxWidth: .infinity)
                 }
@@ -60,7 +62,7 @@ struct cs326View: View {
             
             VStack {
                 HStack {
-                    Text("CS 326: Intro to\nHuman-Computer Interaction")
+                    Text("CS 325: Intro to\nHuman-Computer Interaction")
                         .font(.custom("Inter-Bold", size: 30))
                         .foregroundColor(.recGray)
                     Spacer()
@@ -72,4 +74,3 @@ struct cs326View: View {
         }//all code within this
     }
 }
-
