@@ -30,15 +30,29 @@ struct cs325View: View {
                                 .padding(.bottom, 1)
                             Text("Human-Computer Interaction design is “design for human use”. Computers are a ubiquitous part of many interactions in our lives, from the mundane everydayness of light switches and “smart” vending machines to entertainment and education to sophisticated instruments and complex energy and defense systems. In this course, we will challenge you to broaden your grasp of what a user interface can and should be, and try your hand at doing better yourself. It is a fast-paced, hands-on, project-based experience that will challenge many of your ideas of what computer science is and can be. The design thinking process draws heavily on the fundamentals of human-computer interaction (HCI) methods. I also cover design methodologies, evaluation methodologies (both quantitative and qualitative), human information processing, cognition, and perception.")
                                 .font(.custom("Inter-Regular", size: 17))
+                        
                             Text("Seats:")
                                 .font(.custom("Inter-SemiBold", size: 20))
                                 .padding([.top, .bottom], 1)
                             Text("16 Available\n110 Seats")
                             .padding(.bottom, 1)
-                            Text("Time and Location: ")
+                        
+                            Text("Information: ")
                                 .font(.custom("Inter-SemiBold", size: 20))
                                 .padding([.top, .bottom], 1)
-                            Text("Tuesday, Thursday\n4:00pm - 5:15pm @ ILC S131")
+                            Text("Cheryl Swanier\nTuesday, Thursday\n4:00pm - 5:15pm @ ILC S131")
+                        
+                        VStack(alignment: .leading) {
+                            Text("Ratings:")
+                                .font(.custom("Inter-SemiBold", size: 20))
+                                .padding([.top, .bottom], 1)
+                            HStack {
+                                Text("Professor: 4.7")
+                                Spacer()
+                                Text("Class: 4.5")
+                                Spacer()
+                            }
+                        }
                     }.frame(height: 565)
                         .frame(maxWidth: .infinity)
                 }
@@ -50,7 +64,7 @@ struct cs325View: View {
                 HStack {
                     Text("CS 325: Into to\nHuman-Computer Interaction")
                         .font(.custom("Inter-Bold", size: 30))
-                        .foregroundColor(.recGray)
+                        .foregroundColor(Color("almostBlack"))
                     Spacer()
                 }
                 .padding(.top, 75)

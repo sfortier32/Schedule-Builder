@@ -45,25 +45,25 @@ struct Schedule: View {
                                         .resizable()
                                         .frame(width: 40, height: 40)
                                         .foregroundColor(.white)
-                                }
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
                                 Spacer()
                                 Button(action: {
                                     showView = "Homepage"
                                 }) {
-                                    Image(systemName: "house.fill")
+                                    Image(systemName: "house")
                                         .resizable()
                                         .frame(width: 45, height: 40)
                                         .foregroundColor(.white)
-                                }
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
                                 Spacer()
                                 Button(action: {
                                     showView = "Schedule"
                                 }) {
-                                    Image(systemName: "calendar.circle")
+                                    Image(systemName: "calendar.circle.fill")
                                         .resizable()
                                         .frame(width: 45, height: 45)
                                         .foregroundColor(.white)
-                                }
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
                             }.padding(sides: [.left, .right], value: 75)
                                 .padding(.bottom, 20)
                         )

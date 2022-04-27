@@ -48,9 +48,10 @@ struct Background: View {
         ZStack {
             Image(systemName: "circle.fill")
                 .resizable()
-                .frame(width: 550, height: 350)
+                .frame(width: 500, height: 500)
                 .foregroundColor(Color.lightGreen.opacity(0.2))
-                .position(x: 50, y: 0)
+                .position(x: 80, y: -100)
+                .rotationEffect(.degrees(2))
             Image(systemName: "circle.fill")
                 .resizable()
                 .frame(width: 400, height: 600)

@@ -21,42 +21,53 @@ struct Settings: View {
         switch showView {
         case "Settings":
             ZStack {
+                LinearGradient(gradient: Gradient(colors: [.blue1, .blue2]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
+                    .mask {
+                        Rectangle()
+                            .position(x: 207, y: 555)
+                    }
+                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: -5)
+                
+                HStack {
+                    VStack() {
+                        Text("Settings")
+                            .font(.custom("Inter-Semibold", size: 33))
+                            .foregroundColor(Color("almostBlack"))
+                        Spacer()
+                    }
+                    Spacer()
+                }.padding(.top, 80)
+                    .padding(sides: [.left, .right], value: 30)
                 
                 Rectangle()
-                    .fill(.white)
-                    .frame(width: 430, height: 220)
-                    .position(x: 206, y: 50)
-                Rectangle()
-                    .fill(Color.lightBlue)
-                    .frame(width: 430, height: 600)
-                    .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: -5)
-                    .padding(.top, 100)
+                    .fill(Color.navBarGray)
+                    .frame(width: 420, height: 50)
+                    .position(x: 200, y: 850)
                 
                 Group {
                     Rectangle()
-                        .frame(width: 420, height: 110)
+                        .frame(width: 420, height: 100)
                         .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: -5)
                         .foregroundColor(.navBarGray)
-                        .position(x: 212, y: 800)
                         .overlay(
                             HStack {
                                 Button(action: {
                                     showView = "Settings"
                                 }) {
-                                    Image(systemName: "gearshape")
+                                    Image(systemName: "gearshape.fill")
                                         .resizable()
                                         .frame(width: 40, height: 40)
                                         .foregroundColor(.white)
-                                }
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
                                 Spacer()
                                 Button(action: {
                                     showView = "Homepage"
                                 }) {
-                                    Image(systemName: "house.fill")
+                                    Image(systemName: "house")
                                         .resizable()
                                         .frame(width: 45, height: 40)
                                         .foregroundColor(.white)
-                                }
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
                                 Spacer()
                                 Button(action: {
                                     showView = "Schedule"
@@ -65,18 +76,18 @@ struct Settings: View {
                                         .resizable()
                                         .frame(width: 45, height: 45)
                                         .foregroundColor(.white)
-                                }
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
                             }.padding(sides: [.left, .right], value: 75)
                                 .padding(.bottom, 20)
-                                .position(x: 212, y: 800)
                         )
-                }
-   
-            }
+                }.position(x: 207, y: 800)
+            } //end zstack
         case "Homepage" :
             Homepage()
         case "Schedule" :
             Schedule()
+        case "Launch" :
+            Launch()
         default:
             Text("ERROR: Default case reached")
         }
