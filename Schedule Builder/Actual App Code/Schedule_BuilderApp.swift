@@ -49,7 +49,7 @@ struct Background: View {
             Image(systemName: "circle.fill")
                 .resizable()
                 .frame(width: 500, height: 500)
-                .foregroundColor(Color.lightGreen.opacity(0.2))
+                .foregroundColor(Color.white.opacity(0.05))
                 .position(x: 80, y: -100)
                 .rotationEffect(.degrees(2))
             Image(systemName: "circle.fill")
