@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  cs490uView.swift
 //  Schedule Builder
 //
 //  Created by Sophia Fortier on 4/26/22.
