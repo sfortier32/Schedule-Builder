@@ -49,7 +49,7 @@ struct Settings: View {
                         Advanced()
                     }.frame(height: 900)
                         .position(x: 170, y: 350)
-                        .padding(.bottom, 50)//end VStack
+                        .padding(.bottom, 50)
                         .padding(sides: [.left, .right], value: 35)
                 }.position(x: 207, y: 570)
                 

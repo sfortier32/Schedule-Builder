@@ -40,6 +40,10 @@ extension Color {
     static let blue1 = Color("blue1")
     static let blue2 = Color("blue2")
     static let almostBlack = Color("almostBlack")
+    static let infoBlue = Color("infoBlue")
+    static let infoDarkBlue = Color("infoDarkBlue")
+    static let infoGreen = Color("infoGreen")
+    static let infoOrange = Color("infoOrange")
 }
 
 struct Background: View {
