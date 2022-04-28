@@ -62,7 +62,20 @@ struct Survey1 : View {
     @State private var isCertExpanded = false
     @State private var selectedCert = "Certificate(s)"
     @State private var certificate = ["None",
-                                      "option2"]
+    "Arboriculture & Urban Forestry",
+    "Arts Management",
+    "Business Studies",
+    "Criminology and the Criminal Jusice System",
+    "Film Studies Online",
+    "Human Resource Management",
+    "Journalism",
+    "Medical Humanities",
+    "Political Economy",
+    "Professional Translation and Interpreting",
+    "Social Work & Social Welfare",
+    "Sustainable Business Practices",
+    "Sustainable Food and Farming",
+    "Teaching English to Speakers of Other Languages"]
     
     var body: some View {
         switch showView {
@@ -138,8 +151,7 @@ struct Survey1 : View {
                                 .font(.custom("Inter-Medium", size: 20))
                                 .foregroundColor(.blueGray)
                                 .padding(sides: [.left, .right], value: 20)
-                                .padding(.top, 10)
-                                .padding(.bottom, 10)
+                                .padding([.top, .bottom], 10)
                                 .background(.white.opacity(0.2))
                                 .cornerRadius(25)
                                 .overlay(
@@ -169,8 +181,7 @@ struct Survey1 : View {
                                 .font(.custom("Inter-Medium", size: 20))
                                 .foregroundColor(.blueGray)
                                 .padding(sides: [.left, .right], value: 20)
-                                .padding(.top, 10)
-                                .padding(.bottom, 10)
+                                .padding([.top, .bottom], 10)
                                 .background(.white.opacity(0.2))
                                 .cornerRadius(25)
                                 .overlay(
@@ -200,8 +211,7 @@ struct Survey1 : View {
                                 .font(.custom("Inter-Medium", size: 20))
                                 .foregroundColor(.blueGray)
                                 .padding(sides: [.left, .right], value: 20)
-                                .padding(.top, 10)
-                                .padding(.bottom, 10)
+                                .padding([.top, .bottom], 10)
                                 .background(.white.opacity(0.2))
                                 .cornerRadius(25)
                                 .overlay(
@@ -228,7 +238,15 @@ struct Survey1 : View {
                     
                     VStack {
                         Spacer()
-                        ProgressBar1()
+                        ZStack(alignment: .leading) {
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(Color.white)
+                                .frame(width: 274, height: 15)
+                                .shadow(color: .black, radius: 4, x: 2, y: 6).opacity(0.2)
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(Color.white)
+                                .frame(width: 70, height: 15)
+                        }
                     }.padding(.bottom, 80)
                 } //End of Case1
 
@@ -239,43 +257,6 @@ struct Survey1 : View {
             default:
                 Text("ERROR: You reached the default case.")
             }
-    }
-}
-
-//Extra Components
-
-struct ProgressBar1: View {
-    var body: some View {
-        ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: 25)
-                .fill(Color.white)
-                .frame(width: 274, height: 15)
-                .shadow(color: .black, radius: 4, x: 2, y: 6).opacity(0.2)
-            RoundedRectangle(cornerRadius: 25)
-                .fill(Color.white)
-                .frame(width: 30, height: 15)
-        }
-    }
-}
-
-//Extensions & Functions
-
-enum Side: Equatable, Hashable {
-    case left
-    case right
-}
-
-extension View {
-    func padding(sides: [Side], value: CGFloat = 8) -> some View {
-        HStack(spacing: 0) {
-            if sides.contains(.left) {
-                Spacer().frame(width: value)
-            }
-            self
-            if sides.contains(.right) {
-                Spacer().frame(width: value)
-            }
-        }
     }
 }
 
