@@ -16,6 +16,7 @@ struct Settings_Preview: PreviewProvider {
 struct Settings: View {
     
     @State private var showView = "Settings"
+    @State private var name = "John Doe"
     
     var body: some View {
         switch showView {
@@ -38,6 +39,49 @@ struct Settings: View {
                     Spacer()
                 }.padding(.top, 80)
                     .padding(sides: [.left, .right], value: 30)
+                
+                //Text boxes
+                
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        Text("Personal")
+                            .font(.custom("Inter-SemiBold", size: 18))
+                            .foregroundColor(Color.recGray)
+                            .padding(.bottom, 1)
+                            .padding(sides: [.left], value: 4)
+                        Text("Name")
+                            .font(.custom("Inter-Medium", size: 16))
+                            .foregroundColor(Color.recGray)
+                            .padding(sides: [.left], value: 4)
+                        WideRectangle()
+                            .overlay (
+                                TextField("Name", text: $name))
+                        Text("Email")
+                            .font(.custom("Inter-Medium", size: 16))
+                            .foregroundColor(Color.recGray)
+                            .padding(.top, 5)
+                            .padding(sides: [.left], value: 4)
+                        WideRectangle()
+                        
+                        Text("Academics")
+                            .font(.custom("Inter-SemiBold", size: 18))
+                            .foregroundColor(Color.recGray)
+                            .padding(sides: [.left], value: 4)
+                            .padding(.bottom, 5)
+                            .padding(.top, 20)
+                        Text("Major(s)")
+                            .font(.custom("Inter-Medium", size: 16))
+                            .foregroundColor(Color.recGray)
+                            .padding(sides: [.left], value: 4)
+                        WideRectangle()
+                        
+                        
+                    }
+                }.frame(height: 600)
+                    .position(x: 207, y: 475)
+                
+                
+                //End text boxes
                 
                 Rectangle()
                     .fill(Color.navBarGray)
@@ -91,5 +135,14 @@ struct Settings: View {
         default:
             Text("ERROR: Default case reached")
         }
+    }
+}
+
+struct WideRectangle: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 20)
+            .frame(width: 350, height: 57)
+            .foregroundColor(Color.recWhite)
+            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
     }
 }
