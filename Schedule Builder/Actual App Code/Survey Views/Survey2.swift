@@ -41,7 +41,7 @@ struct Survey2: View {
                                 .strokeBorder(Color.white, lineWidth: 3)
                                 .background(Color.white.opacity(0.2))
                                 .cornerRadius(27)
-                                .frame(width: 265, height: 60)
+                                .frame(height: 60)
                                 .overlay(
                                     TextField("Class Name", text: $className)
                                         .accentColor(Color.blueGray)
@@ -90,8 +90,8 @@ struct Survey2: View {
                                         .foregroundColor(.blueGray)
                                         .padding(sides: [.left, .right], value: 20)
                                 )
-                        }.padding(sides: [.left, .right], value: 72) //end hstack
-                        } //end vstack inner
+                        }//end hstack
+                    } //end vstack inner
                     
                     Text("add another class +")
                         .font(.custom("Inter-MediumItalic", size: 17))
@@ -101,17 +101,18 @@ struct Survey2: View {
                     
                     if className != "" && credits != "" {
                         Button(action: {
-                            showView = "Homepage"
+                            showView = "Survey3"
                         }) {
                             VStack {
                                 Text("Next")
                                     .font(.custom("Inter-Medium", size: 20))
                                     .foregroundColor(.white)
                                     .padding(.top, 20)
+                                
                             }
                         }
                     }
-                }
+                }.frame(width: 275, height: 700)
                 
                 //Header Buttons
                 VStack {
@@ -133,7 +134,7 @@ struct Survey2: View {
                         Spacer()
                         //Skip Button
                         Button(action: {
-                            showView = "Homepage"
+                            showView = "Survey3"
                         }) {
                             VStack {
                                 Text("skip")
@@ -147,13 +148,26 @@ struct Survey2: View {
                         }.padding(.top, 50)
                     }.padding(sides: [.left, .right], value: 60)
                     Spacer()
-                }
+                }//end of VStack of question + answer boxes
+                
+                VStack {
+                    Spacer()
+                    ZStack(alignment: .leading) {
+                        RoundedRectangle(cornerRadius: 25)
+                            .fill(Color.white)
+                            .frame(width: 274, height: 15)
+                            .shadow(color: .black, radius: 4, x: 2, y: 6).opacity(0.2)
+                        RoundedRectangle(cornerRadius: 25)
+                            .fill(Color.white)
+                            .frame(width: 140, height: 15)
+                    }
+                }.padding(.bottom, 80)
                 
             }//end zstack of case 1
         case "Survey1" :
             Survey1()
-        case "Homepage" :
-            Homepage()
+        case "Survey3" :
+            Survey3()
         default :
             Text("Error: default")
         }
