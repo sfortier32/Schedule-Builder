@@ -14,6 +14,8 @@ struct schedClass: Hashable{
     let yPos: Int
     let color: Color
     var hearted: Bool
+    let credits: Int
+
 }
 
 struct Schedule_Preview: PreviewProvider {
@@ -25,7 +27,7 @@ struct Schedule_Preview: PreviewProvider {
 
 struct Schedule: View {
     @State private var showView = "Schedule"
-    @State var classes = [schedClass(className: "CS326", classTime: "9am-10am", xPos: 100, yPos: 400, color: Color(#colorLiteral(red: 0.49167388677597046, green: 0.4285937547683716, blue: 0.8791666626930237, alpha: 1)), hearted: true), schedClass(className: "MKTNG301", classTime: "4pm-5pm", xPos: 100, yPos: 675, color: Color(#colorLiteral(red: 0.5267361402511597, green: 0.8541666865348816, blue: 0.5987708568572998, alpha: 1)), hearted: true),schedClass(className: "CS311", classTime: "1pm-2pm", xPos: 175, yPos: 560, color: Color(#colorLiteral(red: 0.7588381767272949, green: 0.8583333492279053, blue: 0.47565972805023193, alpha: 1)), hearted: true)]
+    @State var classes = [schedClass(className: "CS326", classTime: "9am-10am", xPos: 100, yPos: 400, color: Color(#colorLiteral(red: 0.49167388677597046, green: 0.4285937547683716, blue: 0.8791666626930237, alpha: 1)), hearted: true, credits: 4), schedClass(className: "MKTNG301", classTime: "4pm-5pm", xPos: 100, yPos: 675, color: Color(#colorLiteral(red: 0.5267361402511597, green: 0.8541666865348816, blue: 0.5987708568572998, alpha: 1)), hearted: true, credits: 3),schedClass(className: "CS311", classTime: "1pm-2pm", xPos: 175, yPos: 560, color: Color(#colorLiteral(red: 0.7588381767272949, green: 0.8583333492279053, blue: 0.47565972805023193, alpha: 1)), hearted: true, credits: 4), schedClass(className: "CS345", classTime: "1pm-2pm", xPos: 375, yPos: 550, color: Color(#colorLiteral(red: 0.3802907169, green: 0.9710113406, blue: 1, alpha: 1)), hearted: true, credits: 3), schedClass(className: "CS320", classTime: "1pm-2pm", xPos: 275, yPos: 375, color: Color(#colorLiteral(red: 0.3802907169, green: 0.9710113406, blue: 1, alpha: 1)), hearted: true, credits: 4) ]
     var body: some View {
         switch showView {
         case "Schedule":
@@ -59,7 +61,8 @@ struct Schedule: View {
                                             let i = classes.firstIndex(where:{$0.className == sclass.className})
                                             classes[i!].hearted.toggle()
                                         } label: {
-                                            Image(systemName: sclass.hearted ? "heart.fill" : "heart")
+                                            Image(systemName: sclass.hearted ? "heart.fill" : "heart").foregroundColor(Color(#colorLiteral(red: 1, green: 0, blue: 0.460709691, alpha: 1)))
+                                            
                                         }
                                         }
                                     
@@ -67,14 +70,14 @@ struct Schedule: View {
                                 }
                             }
                         }
-                    }
+                    }.padding(.bottom, 25).frame(height: 222)
                     
                 }
                 ZStack{
                     Rectangle()
                         .fill(Color.white)
                         .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.10000000149011612)), radius:4, x:0, y:-4)
-                        .frame(width: 800, height: 650).position(x: 100, y: 600)
+                        .frame(width: 800, height: 600).position(x: 100, y: 600)
                     HStack(){
                         Group{
                             VStack(alignment: .leading){
@@ -122,7 +125,6 @@ struct Schedule: View {
                                 }.font(.custom("Inter Semi Bold", size: 12)).foregroundColor(Color(.black))
                                     }.position(x: CGFloat(sclass.xPos), y: CGFloat(sclass.yPos))
                     }
-                    
                     Rectangle()
                         .fill(Color.navBarGray)
                         .frame(width: 420, height: 50)
