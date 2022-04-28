@@ -17,7 +17,7 @@ struct Schedule_BuilderApp: App {
     }
 }
 
-// Components that are used a lot
+// Colors
 
 extension Color {
     static let lightBlue = Color("lightBlue")
@@ -46,6 +46,8 @@ extension Color {
     static let infoOrange = Color("infoOrange")
 }
 
+// Commonly Used Views
+
 struct Background: View {
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [.lightBlue, .lightGreen]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
@@ -67,4 +69,24 @@ struct BackgroundRect: View {
     }
 }
 
+//Extensions
+
+enum Side: Equatable, Hashable {
+    case left
+    case right
+}
+
+extension View {
+    func padding(sides: [Side], value: CGFloat = 8) -> some View {
+        HStack(spacing: 0) {
+            if sides.contains(.left) {
+                Spacer().frame(width: value)
+            }
+            self
+            if sides.contains(.right) {
+                Spacer().frame(width: value)
+            }
+        }
+    }
+}
 

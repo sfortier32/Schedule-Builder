@@ -62,7 +62,20 @@ struct Survey1 : View {
     @State private var isCertExpanded = false
     @State private var selectedCert = "Certificate(s)"
     @State private var certificate = ["None",
-                                      "option2"]
+    "Arboriculture & Urban Forestry",
+    "Arts Management",
+    "Business Studies",
+    "Criminology and the Criminal Jusice System",
+    "Film Studies Online",
+    "Human Resource Management",
+    "Journalism",
+    "Medical Humanities",
+    "Political Economy",
+    "Professional Translation and Interpreting",
+    "Social Work & Social Welfare",
+    "Sustainable Business Practices",
+    "Sustainable Food and Farming",
+    "Teaching English to Speakers of Other Languages"]
     
     var body: some View {
         switch showView {
@@ -254,27 +267,6 @@ struct ProgressBar1: View {
             RoundedRectangle(cornerRadius: 25)
                 .fill(Color.white)
                 .frame(width: 30, height: 15)
-        }
-    }
-}
-
-//Extensions & Functions
-
-enum Side: Equatable, Hashable {
-    case left
-    case right
-}
-
-extension View {
-    func padding(sides: [Side], value: CGFloat = 8) -> some View {
-        HStack(spacing: 0) {
-            if sides.contains(.left) {
-                Spacer().frame(width: value)
-            }
-            self
-            if sides.contains(.right) {
-                Spacer().frame(width: value)
-            }
         }
     }
 }
