@@ -39,31 +39,12 @@ extension Color {
     static let teal1 = Color("teal1")
     static let blue1 = Color("blue1")
     static let blue2 = Color("blue2")
+    static let almostBlack = Color("almostBlack")
 }
 
 struct Background: View {
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [.lightBlue, .lightGreen]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
-        
-        ZStack {
-            Image(systemName: "circle.fill")
-                .resizable()
-                .frame(width: 500, height: 500)
-                .foregroundColor(Color.white.opacity(0.05))
-                .position(x: 80, y: -100)
-                .rotationEffect(.degrees(2))
-            Image(systemName: "circle.fill")
-                .resizable()
-                .frame(width: 400, height: 600)
-                .foregroundColor(Color.lightBlue.opacity(0.2))
-                .position(x: 450, y: 600)
-            Image(systemName: "circle.fill")
-                .resizable()
-                .frame(width: 400, height: 650)
-                .foregroundColor(Color.white.opacity(0.05))
-                .position(x: -75, y: 450)
-                .rotationEffect(.degrees(-21))
-        }
     }
 }
 
