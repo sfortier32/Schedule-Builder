@@ -1,5 +1,5 @@
 //
-//  cs326View.swift
+//  info203View.swift
 //  Schedule Builder
 //
 //  Created by Sophia Fortier on 4/26/22.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct cs326View_Preview : PreviewProvider {
+struct info203View_Preview : PreviewProvider {
     static var previews: some View {
-        cs326View()
+        info203View()
     }
 }
 
-struct cs326View : View {
+struct info203View : View {
     var body: some View {
         ZStack {
             BackgroundRect()
-                .background(Color.infoGreen)
+                .background(Color.infoDarkBlue)
                 .foregroundColor(.white)
             
             ScrollView {
@@ -25,39 +25,39 @@ struct cs326View : View {
                     Text("Description: ")
                         .font(.custom("Inter-SemiBold", size: 20))
                         .padding(.bottom, 1)
-                    Text("The World Wide Web was proposed originally as a collection of static documents inter-connected by hyperlinks. Today, the web has grown into a rich platform, built on a variety of protocols, standards, and programming languages, that aims to replace many of the services traditionally provided by a desktop operating system.  This course will study core technologies, concepts, and techniques behind the creation of modern web-based systems and applications.")
+                    Text("The course will cover the technical foundations and use of today's communication networks, particularly the internet. It will also address key social, policy, economic, and legal aspects of these networks, their use (and abuse) and their regulation. This course covers computer science topics, but all material will be presented in a way that is accessible to an educated audience with or without a strong technical background.")
                         .font(.custom("Inter-Regular", size: 17))
                 
                     Text("Seats:")
                         .font(.custom("Inter-SemiBold", size: 20))
                         .padding([.top, .bottom], 1)
-                    Text("4 Available\n98 Seats")
+                    Text("29 Available\n55 Seats")
                     .padding(.bottom, 1)
                 
                     Text("Information: ")
                         .font(.custom("Inter-SemiBold", size: 20))
                         .padding([.top, .bottom], 1)
-                    Text("4 Credits\nEmergy Berger\nTuesday, Thursday\n1:00pm - 2:15pm @ Goessmann Lab Rm 20")
+                    Text("3 Credits\nMohammadhassan Hajiesmaili\nWednesday, Friday\n10:10pm - 11:25pm @ CompSci Bldg Rm 142")
                 
                     VStack(alignment: .leading) {
                         Text("Ratings:")
                             .font(.custom("Inter-SemiBold", size: 20))
                             .padding([.top, .bottom], 1)
                         HStack {
-                            Text("Professor: 4.0")
+                            Text("Professor: 4.3")
                             Spacer()
-                            Text("Class: 5.0")
+                            Text("Class: 3.7")
                             Spacer()
                         }
                     }
                 }.padding(sides: [.left, .right], value: 20)
-                    .frame(height: 600)
-                    .position(x: 207, y: 280)
+                    .frame(height: 700)
+                    .position(x: 207, y: 283)
             }.position(x: 207, y: 625)
                 
             VStack {
                 HStack {
-                    Text("CS 326: Web Programming")
+                    Text("Info 203: A Networked World")
                         .font(.custom("Inter-Bold", size: 30))
                         .foregroundColor(Color("almostBlack"))
                     Spacer()

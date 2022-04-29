@@ -135,45 +135,43 @@ struct Schedule: View {
                     
                     Group {
                         Rectangle()
-                            .frame(width: 420, height: 100)
-                            .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: -5)
-                            .foregroundColor(.navBarGray)
-                            .overlay(
-                                HStack {
-                                    Group{
-                                        Button(action: {
-                                            showView = "Settings"
-                                        }) {
-                                            Image(systemName: "gearshape")
-                                                .resizable()
-                                                .frame(width: 40, height: 40)
-                                                .foregroundColor(.white)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            showView = "Homepage"
-                                        }) {
-                                            Image(systemName: "house.fill")
-                                                .resizable()
-                                                .frame(width: 45, height: 40)
-                                                .foregroundColor(.white)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            showView = "Schedule"
-                                        }) {
-                                            Image(systemName: "calendar.circle")
-                                                .resizable()
-                                                .frame(width: 45, height: 45)
-                                                .foregroundColor(.white)
-                                        }
-                                    }
-                                }.padding(sides: [.left, .right], value: 75)
-                                    .padding(.bottom, 20)
-                            )
-                    }.position(x: 207, y: 800)
-                }
+                        .frame(width: 420, height: 100)
+                        .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: -5)
+                        .foregroundColor(.navBarGray)
+                        .overlay(
+                            HStack {
+                                Button(action: {
+                                    showView = "Settings"
+                                }) {
+                                    Image(systemName: "gearshape")
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                        .foregroundColor(.white)
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
+                                Spacer()
+                                Button(action: {
+                                    showView = "Homepage"
+                                }) {
+                                    Image(systemName: "house")
+                                        .resizable()
+                                        .frame(width: 45, height: 40)
+                                        .foregroundColor(.white)
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
+                                Spacer()
+                                Button(action: {
+                                    showView = "Schedule"
+                                }) {
+                                    Image(systemName: "calendar.circle.fill")
+                                        .resizable()
+                                        .frame(width: 45, height: 45)
+                                        .foregroundColor(.white)
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
+                            }.padding(sides: [.left, .right], value: 75)
+                                .padding(.bottom, 20)
+                        )
+                }.position(x: 207, y: 800)
             } //end zstack
+        }
         case "Homepage" :
             Homepage()
         case "Settings" :

@@ -69,8 +69,9 @@ struct Homepage : View {
                                         .resizable()
                                         .frame(width: 40, height: 40)
                                         .foregroundColor(.white)
-                                }
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
                                 Spacer()
+                                
                                 Button(action: {
                                     showView = "Homepage"
                                 }) {
@@ -78,7 +79,7 @@ struct Homepage : View {
                                         .resizable()
                                         .frame(width: 45, height: 40)
                                         .foregroundColor(.white)
-                                }
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
                                 Spacer()
                                 Button(action: {
                                     showView = "Schedule"
@@ -87,7 +88,7 @@ struct Homepage : View {
                                         .resizable()
                                         .frame(width: 45, height: 45)
                                         .foregroundColor(.white)
-                                }
+                                }.shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 2)
                             }.padding(sides: [.left, .right], value: 75)
                                 .padding(.bottom, 20)
                         )
@@ -108,7 +109,7 @@ struct Homepage : View {
 struct HomepageHeader: View {
     var body: some View {
         Text("John,\nWe recommend the\nfollowing classes.")
-            .font(.custom("Inter-Medium", size: 25))
+            .font(.custom("Inter-SemiBold", size: 25))
             .foregroundColor(.white)
     }
 }
@@ -292,22 +293,3 @@ struct RecCards: View {
     }
 }
 
-// Move these to another file when finished
-
-struct cs326View: View {
-    var body: some View {
-        Text("CS 326")
-    }
-}
-
-struct cs490uView: View {
-    var body: some View {
-        Text("CS 490U")
-    }
-}
-
-struct info203View: View {
-    var body: some View {
-        Text("Info 203")
-    }
-}

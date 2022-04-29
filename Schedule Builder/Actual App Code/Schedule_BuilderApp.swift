@@ -17,7 +17,7 @@ struct Schedule_BuilderApp: App {
     }
 }
 
-// Components that are used a lot
+// Colors
 
 extension Color {
     static let lightBlue = Color("lightBlue")
@@ -39,30 +39,18 @@ extension Color {
     static let teal1 = Color("teal1")
     static let blue1 = Color("blue1")
     static let blue2 = Color("blue2")
+    static let almostBlack = Color("almostBlack")
+    static let infoBlue = Color("infoBlue")
+    static let infoDarkBlue = Color("infoDarkBlue")
+    static let infoGreen = Color("infoGreen")
+    static let infoOrange = Color("infoOrange")
 }
+
+// Commonly Used Views
 
 struct Background: View {
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [.lightBlue, .lightGreen]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
-        
-        ZStack {
-            Image(systemName: "circle.fill")
-                .resizable()
-                .frame(width: 550, height: 350)
-                .foregroundColor(Color.lightGreen.opacity(0.2))
-                .position(x: 50, y: 0)
-            Image(systemName: "circle.fill")
-                .resizable()
-                .frame(width: 400, height: 600)
-                .foregroundColor(Color.lightBlue.opacity(0.2))
-                .position(x: 450, y: 600)
-            Image(systemName: "circle.fill")
-                .resizable()
-                .frame(width: 400, height: 650)
-                .foregroundColor(Color.white.opacity(0.05))
-                .position(x: -75, y: 450)
-                .rotationEffect(.degrees(-21))
-        }
     }
 }
 
@@ -81,4 +69,24 @@ struct BackgroundRect: View {
     }
 }
 
+//Extensions
+
+enum Side: Equatable, Hashable {
+    case left
+    case right
+}
+
+extension View {
+    func padding(sides: [Side], value: CGFloat = 8) -> some View {
+        HStack(spacing: 0) {
+            if sides.contains(.left) {
+                Spacer().frame(width: value)
+            }
+            self
+            if sides.contains(.right) {
+                Spacer().frame(width: value)
+            }
+        }
+    }
+}
 
