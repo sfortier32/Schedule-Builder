@@ -17,6 +17,9 @@ struct Settings: View {
     
     @State private var showView = "Settings"
     
+    @State private var name = "John Doe"
+    @State private var email = "Student@umass.edu"
+    
     var body: some View {
         switch showView {
         case "Settings":
@@ -27,47 +30,91 @@ struct Settings: View {
                             .position(x: 207, y: 555)
                     }
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: -5)
-                
-                //Title
-                HStack {
-                    VStack() {
-                        Text("Settings")
-                            .font(.custom("Inter-Semibold", size: 33))
-                            .foregroundColor(Color.recGray)
-                        Spacer()
-                    }
-                    Spacer()
-                }.padding(.top, 80)
-                    .padding(sides: [.left, .right], value: 30)
-                
-                //Text boxes
-                
+                        
                 ScrollView {
-                    VStack(alignment: .leading) {
-                        Personal()
+                    VStack {
+                        Text("Personal")
+                            .font(.custom("Inter-SemiBold", size: 20))
+                            .foregroundColor(Color("almostBlack"))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
+                        
+                        Text("Full Name")
+                            .font(.custom("Inter-Medium", size: 18))
+                            .foregroundColor(Color("almostBlack"))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
+                            
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: 350, height: 48)
+                            .foregroundColor(Color.recWhite)
+                            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                            .overlay (
+                                TextField("Name", text: $name)
+                                    .font(.custom("Inter-Medium", size: 16))
+                                    .foregroundColor(.gray)
+                                    .padding(sides: [.left, .right], value: 20)
+                            )
+                        
+                        Text("Email")
+                            .font(.custom("Inter-Medium", size: 18))
+                            .foregroundColor(Color("almostBlack"))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 5, leading: 40, bottom: 0, trailing: 0))
+                            
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: 350, height: 48)
+                            .foregroundColor(Color.recWhite)
+                            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                            .overlay (
+                                TextField("Email", text: $email)
+                                    .font(.custom("Inter-Medium", size: 16))
+                                    .foregroundColor(.gray)
+                                    .padding(sides: [.left, .right], value: 20)
+                            )
+                        
                         Academics()
                         Advanced()
-                    }.frame(height: 900)
-                        .position(x: 170, y: 350)
-                        .padding(.bottom, 50)
-                        .padding(sides: [.left, .right], value: 35)
-                }.position(x: 207, y: 570)
+                        
+                    }.position(x: 207, y: 360)
+                        .padding(.bottom, 270)//end vstack
+                }.position(x: 207, y: 570)//end scroll view
                 
-                //End text boxes
                 
-                //Log Out Button
-                Button(action: {
-                    showView = "Launch"
-                })  {
-                    Text("Sign Out")
-                        .font(.custom("Inter-Medium", size: 16))
-                        .foregroundColor(.almostBlack)
-                        .padding(.bottom, 5)
-                    Image(systemName: "arrow.right")
-                        .foregroundColor(.almostBlack)
-                        .padding(.bottom, 4)
-                }.position(x: 330, y: 40)
+                // Settings and Log Out
+                VStack() {
+                    HStack {
+
+                        Text("Settings")
+                            .font(.custom("Inter-SemiBold", size: 33))
+                            .foregroundColor(Color.recGray)
+                        Spacer()
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            showView = "Launch"
+                        }) {
+                            HStack {
+                                Text("Log Out")
+                                    .font(.custom("Inter-SemiBold", size: 16))
+                                    .foregroundColor(.almostBlack)
+                                Image(systemName: "arrow.right")
+                                    .resizable()
+                                    .frame(width: 18, height: 16)
+                                    .foregroundColor(.almostBlack)
+                                    .padding(sides: [.right], value: 6)
+                            }
+                            
+                        }
+                    }.padding(.top, 80)
+                        .padding(sides: [.left, .right], value: 30)
+                    
+                    
+                }.position(x: 207, y: 60)
+
                 
+                // Navigation Bar
                 Rectangle()
                     .fill(Color.navBarGray)
                     .frame(width: 420, height: 50)
@@ -124,150 +171,145 @@ struct Settings: View {
     }
 }
 
-struct Personal: View {
-    
-    @State private var name = "John Doe"
-    @State private var email = "student@umass.edu"
-    
+struct SmallRect2 : View {
     var body: some View {
-        Text("Personal")
-            .font(.custom("Inter-Medium", size: 19))
-            .foregroundColor(Color.almostBlack)
-            .padding(sides: [.left], value: 4)
-        
-        Text("Name")
-            .font(.custom("Inter-Regular", size: 16))
-            .foregroundColor(Color.almostBlack)
-            .padding(sides: [.left], value: 4)
-        WideRectangle()
-            .overlay (
-                TextField("Name", text: $name)
-                    .font(.custom("Inter-Regular", size: 16))
-                    .foregroundColor(Color.navBarGray)
-                    .padding(sides: [.left, .right], value: 15)
-            )
-        
-        Text("Email")
-            .font(.custom("Inter-Regular", size: 16))
-            .foregroundColor(Color.almostBlack)
-            .padding(.top, 5)
-            .padding(sides: [.left], value: 4)
-        WideRectangle()
-            .overlay (
-                TextField("Email", text: $email)
-                    .font(.custom("Inter-Regular", size: 16))
-                    .foregroundColor(Color.navBarGray)
-                    .padding(sides: [.left, .right], value: 15)
-            )
+        RoundedRectangle(cornerRadius: 20)
+            .frame(width: 160, height: 50)
+            .foregroundColor(Color.recWhite)
+            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
     }
 }
 
 struct Academics : View {
     
     @State private var major = "Informatics, B.S."
-    @State private var minor = "Mathematics"
+    @State private var minor = "Public Health"
     @State private var certificate = "None"
-    @State private var credComp = "50"
-    @State private var credTran = "30"
-    @State private var credNeed = "30"
+    @State private var credits_completed = "60"
+    @State private var credits_transferred = "30"
+    @State private var credits_needed = "30"
     
     var body: some View {
         Text("Academics")
-            .font(.custom("Inter-Medium", size: 18))
-            .foregroundColor(Color.almostBlack)
-            .padding(sides: [.left], value: 4)
-            .padding(.top, 20)
+            .font(.custom("Inter-SemiBold", size: 20))
+            .foregroundColor(Color("almostBlack"))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(EdgeInsets(top: 15, leading: 40, bottom: 0, trailing: 0))
         
         Text("Major(s)")
-            .font(.custom("Inter-Regular", size: 16))
-            .foregroundColor(Color.almostBlack)
-            .padding(sides: [.left], value: 4)
-        WideRectangle()
+            .font(.custom("Inter-Medium", size: 18))
+            .foregroundColor(Color("almostBlack"))
+            .multilineTextAlignment(TextAlignment.leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
+        
+        RoundedRectangle(cornerRadius: 20)
+            .frame(width: 350, height: 48)
+            .foregroundColor(Color.recWhite)
+            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
             .overlay (
                 TextField("Major", text: $major)
-                    .font(.custom("Inter-Regular", size: 16))
-                    .foregroundColor(Color.navBarGray)
-                    .padding(sides: [.left, .right], value: 15)
+                    .font(.custom("Inter-Medium", size: 16))
+                    .foregroundColor(.gray)
+                    .padding(sides: [.left, .right], value: 20)
             )
         
-        HStack {
-            VStack(alignment: .leading) {
-                Text("Minor(s)")
-                    .font(.custom("Inter-Regular", size: 16))
-                    .foregroundColor(Color.almostBlack)
-                    .padding(sides: [.left], value: 4)
-                HalfWidthRect()
-                    .overlay(
-                        TextField("Minor(s)", text: $minor)
-                            .font(.custom("Inter-Regular", size: 16))
-                            .foregroundColor(Color.navBarGray)
-                            .padding(sides: [.left, .right], value: 15)
-                    )
-            }
-            Spacer()
-            VStack(alignment: .leading) {
-                Text("Certificate(s)")
-                    .font(.custom("Inter-Regular", size: 16))
-                    .foregroundColor(Color.almostBlack)
-                    .padding(sides: [.left], value: 4)
-                HalfWidthRect()
-                    .overlay(
-                        TextField("Certificate(s)", text: $certificate)
-                            .font(.custom("Inter-Regular", size: 16))
-                            .foregroundColor(Color.navBarGray)
-                            .padding(sides: [.left, .right], value: 15)
-                    )
-            }
-        }.padding(.top, 6)//end HStack
         
-        HStack {
-            VStack(alignment: .leading) {
-                Text("Credits\nComplete")
-                    .font(.custom("Inter-Regular", size: 16))
-                    .foregroundColor(Color.almostBlack)
-                    .padding(sides: [.left], value: 4)
-                SmallRectangle()
-                    .overlay(
-                        TextField("0", text: $credComp)
-                            .font(.custom("Inter-Regular", size: 22))
-                            .foregroundColor(Color.navBarGray)
-                            .padding(sides: [.left], value: 37)
+        HStack{
+            VStack{
+                Text("Minor(s)")
+                    .font(.custom("Inter-Medium", size: 18))
+                    .foregroundColor(Color("almostBlack"))
+                    .multilineTextAlignment(TextAlignment.leading)
+                    .frame(maxWidth: 130, alignment: .leading)
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 150, height: 48)
+                    .foregroundColor(Color.recWhite)
+                    .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                    .overlay (
+                        TextField("Minor", text: $minor)
+                            .font(.custom("Inter-Medium", size: 16))
+                            .foregroundColor(.gray)
+                            .padding(sides: [.left, .right], value: 20)
+                    ).padding(.bottom, 10).padding(sides: [.left, .right], value: 20)
+            }
+            
+            VStack{
+                Text("Certificate(s)")
+                    .font(.custom("Inter-Medium", size: 18))
+                    .foregroundColor(Color("almostBlack"))
+                    .multilineTextAlignment(TextAlignment.leading)
+                    .frame(maxWidth: 130, alignment: .leading)
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 150, height: 48)
+                    .foregroundColor(Color.recWhite)
+                    .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                    .overlay (
+                        TextField("Certificate", text: $certificate)
+                            .font(.custom("Inter-Medium", size: 16))
+                            .foregroundColor(.gray)
+                            .padding(sides: [.left, .right], value: 20)
+                    ).padding(.bottom, 10)
+            }
+        }.frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.top, 5)
+            .padding(sides: [.left, .right], value: 15)
+        
+        HStack{
+            VStack(alignment: .leading){
+                Text("Credits\nCompleted")
+                    .font(.custom("Inter-Medium", size: 18))
+                    .foregroundColor(Color("almostBlack"))
+                    .multilineTextAlignment(TextAlignment.leading)
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 100, height: 48)
+                    .foregroundColor(Color.recWhite)
+                    .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                    .overlay (
+                        TextField("0", text: $credits_completed)
+                            .font(.custom("Inter-Regular", size: 27))
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
                     )
             }
             Spacer()
-            
             VStack(alignment: .leading) {
-                Text("Credits\nTransferred")
-                    .font(.custom("Inter-Regular", size: 16))
-                    .foregroundColor(Color.almostBlack)
-                    .padding(sides: [.left], value: 4)
-                SmallRectangle()
-                    .overlay(
-                        TextField("0", text: $credTran)
-                            .font(.custom("Inter-Regular", size: 22))
-                            .foregroundColor(Color.navBarGray)
-                            .padding(sides: [.left], value: 37)
+                Text("Credits\nTransfered")
+                    .font(.custom("Inter-Medium", size: 18))
+                    .foregroundColor(Color("almostBlack"))
+                    .multilineTextAlignment(TextAlignment.leading)
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 100, height: 48)
+                    .foregroundColor(Color.recWhite)
+                    .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                    .overlay (
+                        TextField("0", text: $credits_transferred)
+                            .font(.custom("Inter-Regular", size: 27))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.gray)
                     )
             }
             Spacer()
-            
             VStack(alignment: .leading) {
                 Text("Credits\nNeeded")
-                    .font(.custom("Inter-Regular", size: 16))
-                    .foregroundColor(Color.almostBlack)
-                    .padding(sides: [.left], value: 4)
-                SmallRectangle()
-                    .overlay(
-                        TextField("0", text: $credNeed)
-                            .font(.custom("Inter-Regular", size: 22))
-                            .foregroundColor(Color.navBarGray)
-                            .padding(sides: [.left], value: 37)
+                    .font(.custom("Inter-Medium", size: 18))
+                    .foregroundColor(Color("almostBlack"))
+                    .multilineTextAlignment(TextAlignment.leading)
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 100, height: 48)
+                    .foregroundColor(Color.recWhite)
+                    .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                    .overlay (
+                        TextField("0", text: $credits_needed)
+                            .font(.custom("Inter-Regular", size: 27))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color.gray)
                     )
             }
-        }.padding(.top, 6)//end 2nd HStack
+        }.padding(sides: [.left, .right], value: 40)//end of hstack
     }
 }
-
 struct Advanced : View {
     
     @State private var minProf = "3.5"
@@ -278,21 +320,22 @@ struct Advanced : View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("Advanced")
-                .font(.custom("Inter-Medium", size: 18))
-                .foregroundColor(Color.almostBlack)
-                .padding(sides: [.left], value: 4)
-                .padding(.top, 20)
+                .font(.custom("Inter-SemiBold", size: 20))
+                .foregroundColor(Color("almostBlack"))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 15, leading: 40, bottom: 0, trailing: 0))
             HStack {
                 VStack(alignment: .leading) {
                     Text("Minimum\nProfessor Rating")
-                        .font(.custom("Inter-Regular", size: 16))
-                        .foregroundColor(Color.almostBlack)
-                        .padding(sides: [.left], value: 4)
+                        .font(.custom("Inter-Medium", size: 18))
+                        .foregroundColor(Color("almostBlack"))
+                        .multilineTextAlignment(TextAlignment.leading)
                     SmallRect2()
                         .overlay(
                             HStack {
                                 TextField("1", text: $minProf)
-                                    .font(.custom("Inter-Regular", size: 22))
+                                    .font(.custom("Inter-Regular", size: 23))
+                                    .foregroundColor(.gray)
                                     .padding(sides: [.left], value: 40)
                                 Button(action: {
                                     self.isOpen1.toggle()
@@ -301,7 +344,7 @@ struct Advanced : View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 28, height: 27)
-                                        .accentColor(Color.recGray)
+                                        .accentColor(Color.gray)
                                 }.padding(sides: [.right], value: 30)
                             }
                         )
@@ -309,14 +352,15 @@ struct Advanced : View {
                 Spacer()
                 VStack(alignment: .leading) {
                     Text("Minimum\nClass Rating")
-                        .font(.custom("Inter-Regular", size: 16))
-                        .foregroundColor(Color.almostBlack)
-                        .padding(sides: [.left], value: 4)
+                        .font(.custom("Inter-Medium", size: 18))
+                        .foregroundColor(Color("almostBlack"))
+                        .multilineTextAlignment(TextAlignment.leading)
                     SmallRect2()
                         .overlay(
                             HStack {
                                 TextField("1", text: $minClass)
-                                    .font(.custom("Inter-Regular", size: 22))
+                                    .font(.custom("Inter-Regular", size: 23))
+                                    .foregroundColor(.gray)
                                     .padding(sides: [.left], value: 40)
                                 Button(action: {
                                     self.isOpen2.toggle()
@@ -325,48 +369,13 @@ struct Advanced : View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 28, height: 27)
-                                        .accentColor(Color.recGray)
+                                        .accentColor(Color.gray)
                                 }.padding(sides: [.right], value: 30)
                             }
                         )
                 }
-            }
+            }.padding(sides: [.left, .right], value: 40) //end of hstack
         }
     }
 }
 
-struct WideRectangle: View {
-    var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .frame(width: 350, height: 50)
-            .foregroundColor(Color.recWhite)
-            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
-    }
-}
-
-struct HalfWidthRect : View {
-    var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .frame(width: 170, height: 50)
-            .foregroundColor(Color.recWhite)
-            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
-    }
-}
-
-struct SmallRectangle : View {
-    var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .frame(width: 105, height: 50)
-            .foregroundColor(Color.recWhite)
-            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
-    }
-}
-
-struct SmallRect2 : View {
-    var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .frame(width: 160, height: 50)
-            .foregroundColor(Color.recWhite)
-            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
-    }
-}
