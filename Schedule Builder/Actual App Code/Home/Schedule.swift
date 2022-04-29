@@ -75,7 +75,7 @@ struct Schedule: View {
                                     switch selected.className{
                                     case "CS325": cs325View()
                                     case "CS326": cs326View()
-                                    case "info203": info203View()
+                                    case "Info203": info203View()
                                     case "CS490U": cs490uView()
                                     default:cs325View()
                                     }
