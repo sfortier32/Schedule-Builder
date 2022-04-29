@@ -31,7 +31,6 @@ struct Settings: View {
         switch showView {
         case "Settings":
             ZStack {
-                Background()
                 LinearGradient(gradient: Gradient(colors: [.blue1, .blue2]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
                     .mask {
                         Rectangle()
@@ -116,12 +115,13 @@ struct Settings: View {
                                             .font(.custom("Inter-Medium", size: 18))
                                             .foregroundColor(Color("almostBlack"))
                                             .multilineTextAlignment(TextAlignment.leading)
+                                            .frame(maxWidth: 130, alignment: .leading)
                                         
                                         RoundedRectangle(cornerRadius: 20)
                                             .strokeBorder(Color.white, lineWidth: 3)
-                                            .frame(width: 175, height: 48)
+                                            .frame(width: 150, height: 48)
                                             .background(Color.white.opacity(1))
-                                            .cornerRadius(30)
+                                            .cornerRadius(20)
                                             .overlay (
                                                 TextField("Minor", text: $email)
                                                     .font(.custom("Inter-Medium", size: 16))
@@ -135,11 +135,12 @@ struct Settings: View {
                                             .font(.custom("Inter-Medium", size: 18))
                                             .foregroundColor(Color("almostBlack"))
                                             .multilineTextAlignment(TextAlignment.leading)
+                                            .frame(maxWidth: 130, alignment: .leading)
                                         RoundedRectangle(cornerRadius: 20)
                                             .strokeBorder(Color.white, lineWidth: 3)
-                                            .frame(width: 175, height: 48)
+                                            .frame(width: 150, height: 48)
                                             .background(Color.white.opacity(1))
-                                            .cornerRadius(30)
+                                            .cornerRadius(20)
                                             .overlay (
                                                 TextField("Certificate", text: $email)
                                                     .font(.custom("Inter-Medium", size: 16))
@@ -147,7 +148,7 @@ struct Settings: View {
                                                     .padding(sides: [.left, .right], value: 20)
                                             ).padding(.bottom, 10)
                                     }
-                                }
+                                }.frame(maxWidth: .infinity, alignment: .leading).padding(sides: [.left, .right], value: 15)
                                 
                                 HStack{
                                     VStack{
@@ -186,7 +187,7 @@ struct Settings: View {
                                                     .multilineTextAlignment(.center)
                                                     .foregroundColor(.black)
                                                     .padding(sides: [.left, .right], value: 20)
-                                            ).padding(.bottom, 10)
+                                            ).padding(.bottom, 10).padding(sides: [.left, .right], value: 10)
                                     }
                                     
                                     VStack{
@@ -205,7 +206,7 @@ struct Settings: View {
                                                     .multilineTextAlignment(.center)
                                                     .foregroundColor(Color.black)
                                                     .padding(sides: [.left, .right], value: 20)
-                                            ).padding(.bottom, 10)
+                                            ).padding(.bottom, 10).padding(sides: [.left, .right], value: 10)
                                     }
                                                                                                             
                                 }
@@ -220,7 +221,7 @@ struct Settings: View {
                     HStack {
                         Text("Settings")
                             .font(.custom("Inter-Semibold", size: 33))
-                            .foregroundColor(Color("recWhite"))
+                            .foregroundColor(Color("almostBlack"))
                         Spacer()
                         
                         Spacer()
@@ -231,11 +232,11 @@ struct Settings: View {
                             HStack {
                                 Text("Log Out")
                                     .font(.custom("Inter-SemiBold", size: 16))
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.black)
                                 Image(systemName: "rectangle.portrait.and.arrow.right")
                                     .resizable()
                                     .frame(width: 18, height: 16)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.black)
                                     .padding(sides: [.right], value: 6)
                             }
                             
