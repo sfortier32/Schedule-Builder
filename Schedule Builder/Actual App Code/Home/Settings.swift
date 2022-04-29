@@ -247,21 +247,6 @@ struct Settings: View {
                     
                 }.position(x: 207, y: 60)
                 
-                //Text boxes
-                
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        Personal()
-                        Academics()
-                        Advanced()
-                    }.frame(height: 900)
-                        .position(x: 170, y: 350)
-                        .padding(.bottom, 50)
-                        .padding(sides: [.left, .right], value: 35)
-                }.position(x: 207, y: 570)
-                
-                //End text boxes
-                
                 //Log Out Button
                 Button(action: {
                     showView = "Launch"
