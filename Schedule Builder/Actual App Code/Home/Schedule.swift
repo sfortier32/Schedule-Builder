@@ -29,7 +29,8 @@ struct Schedule: View {
     @State private var showView = "Schedule"
     @State private var searchText = "";
     @State private var presentSheet = false
-    @State var classes = [schedClass(className: "CS326", classTime: "9am-10am", xPos: 100, yPos: 400, color: Color(#colorLiteral(red: 0.49167388677597046, green: 0.4285937547683716, blue: 0.8791666626930237, alpha: 1)), hearted: true, credits: 4), schedClass(className: "MKTNG301", classTime: "4pm-5pm", xPos: 100, yPos: 675, color: Color(#colorLiteral(red: 0.5267361402511597, green: 0.8541666865348816, blue: 0.5987708568572998, alpha: 1)), hearted: true, credits: 3),schedClass(className: "CS311", classTime: "1pm-2pm", xPos: 175, yPos: 560, color: Color(#colorLiteral(red: 0.7588381767272949, green: 0.8583333492279053, blue: 0.47565972805023193, alpha: 1)), hearted: true, credits: 4), schedClass(className: "CS345", classTime: "1pm-2pm", xPos: 375, yPos: 550, color: Color(#colorLiteral(red: 0.3802907169, green: 0.9710113406, blue: 1, alpha: 1)), hearted: true, credits: 3), schedClass(className: "CS320", classTime: "8am-9am", xPos: 240, yPos: 360, color: Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)), hearted: true, credits: 4)]
+    @State var classes = getClassArray()
+    @State private var selected: schedClass = schedClass(className: "", classTime: "", xPos: 0, yPos: 0, color: .black, hearted: false, credits: 0)
     var body: some View {
         switch showView {
         case "Schedule":
@@ -63,13 +64,21 @@ struct Schedule: View {
                                             }
                                             .padding()
                                             }
+                                            .onTapGesture(perform: {
+                                                selected = sclass
+                                                presentSheet.toggle()
+                                            })
                                     )
                                     .frame(width: 334, height: 45)
-                                }.onTapGesture(perform: {
-                                    presentSheet.toggle()
-                                })
+                                }
                                 .sheet(isPresented: $presentSheet) {
-                                    cs325View()
+                                    switch selected.className{
+                                    case "CS325": cs325View()
+                                    case "CS326": cs326View()
+                                    case "info203": info203View()
+                                    case "CS490U": cs490uView()
+                                    default:cs325View()
+                                    }
                                 }
                             }
                         }
