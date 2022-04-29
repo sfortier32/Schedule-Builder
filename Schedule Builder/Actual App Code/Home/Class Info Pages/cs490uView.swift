@@ -37,7 +37,7 @@ struct cs490uView : View {
                     Text("Information: ")
                         .font(.custom("Inter-SemiBold", size: 20))
                         .padding([.top, .bottom], 1)
-                    Text("3 Credits\nAimen Gaba, Cindy Xiong\nTuesday, Thursday\n2:30pm - 3:45pm @ CompSci Bldg Rm 142")
+                    Text("3 Credits\nAimen Gaba, Cindy Xiong\nFriday\n1:00pm - 2:00pm @ CompSci Bldg Rm 142")
                 
                     VStack(alignment: .leading) {
                         Text("Ratings:")

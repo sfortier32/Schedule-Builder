@@ -38,7 +38,7 @@ struct cs325View: View {
                     Text("Information: ")
                         .font(.custom("Inter-SemiBold", size: 20))
                         .padding([.top, .bottom], 1)
-                    Text("3 Credits\nCheryl Swanier\nTuesday, Thursday\n4:00pm - 5:15pm @ ILC S131")
+                    Text("3 Credits\nCheryl Swanier\nMonday\n9:00am - 10:00am @ ILC S131")
                 
                     VStack(alignment: .leading) {
                         Text("Ratings:")
