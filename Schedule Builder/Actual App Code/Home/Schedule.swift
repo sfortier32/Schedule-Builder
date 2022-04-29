@@ -27,7 +27,9 @@ struct Schedule_Preview: PreviewProvider {
 
 struct Schedule: View {
     @State private var showView = "Schedule"
-    @State var classes = [schedClass(className: "CS326", classTime: "9am-10am", xPos: 100, yPos: 400, color: Color(#colorLiteral(red: 0.49167388677597046, green: 0.4285937547683716, blue: 0.8791666626930237, alpha: 1)), hearted: true, credits: 4), schedClass(className: "MKTNG301", classTime: "4pm-5pm", xPos: 100, yPos: 675, color: Color(#colorLiteral(red: 0.5267361402511597, green: 0.8541666865348816, blue: 0.5987708568572998, alpha: 1)), hearted: true, credits: 3),schedClass(className: "CS311", classTime: "1pm-2pm", xPos: 175, yPos: 560, color: Color(#colorLiteral(red: 0.7588381767272949, green: 0.8583333492279053, blue: 0.47565972805023193, alpha: 1)), hearted: true, credits: 4), schedClass(className: "CS345", classTime: "1pm-2pm", xPos: 375, yPos: 550, color: Color(#colorLiteral(red: 0.3802907169, green: 0.9710113406, blue: 1, alpha: 1)), hearted: true, credits: 3), schedClass(className: "CS320", classTime: "1pm-2pm", xPos: 275, yPos: 375, color: Color(#colorLiteral(red: 0.3802907169, green: 0.9710113406, blue: 1, alpha: 1)), hearted: true, credits: 4) ]
+    @State private var searchText = "";
+    @State private var presentSheet = false
+    @State var classes = [schedClass(className: "CS326", classTime: "9am-10am", xPos: 100, yPos: 400, color: Color(#colorLiteral(red: 0.49167388677597046, green: 0.4285937547683716, blue: 0.8791666626930237, alpha: 1)), hearted: true, credits: 4), schedClass(className: "MKTNG301", classTime: "4pm-5pm", xPos: 100, yPos: 675, color: Color(#colorLiteral(red: 0.5267361402511597, green: 0.8541666865348816, blue: 0.5987708568572998, alpha: 1)), hearted: true, credits: 3),schedClass(className: "CS311", classTime: "1pm-2pm", xPos: 175, yPos: 560, color: Color(#colorLiteral(red: 0.7588381767272949, green: 0.8583333492279053, blue: 0.47565972805023193, alpha: 1)), hearted: true, credits: 4), schedClass(className: "CS345", classTime: "1pm-2pm", xPos: 375, yPos: 550, color: Color(#colorLiteral(red: 0.3802907169, green: 0.9710113406, blue: 1, alpha: 1)), hearted: true, credits: 3), schedClass(className: "CS320", classTime: "1pm-2pm", xPos: 275, yPos: 375, color: Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)), hearted: true, credits: 4)]
     var body: some View {
         switch showView {
         case "Schedule":
@@ -35,38 +37,39 @@ struct Schedule: View {
                 Background()
                 VStack(){
                     HStack{
-                        Text("Fall 2022").font(.custom("Inter Semi Bold", size: 25)).foregroundColor(Color(.black)).lineSpacing(0.5).padding()
+                        Text("Fall 2022").font(.custom("Inter Semi Bold", size: 25)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).lineSpacing(0.5).padding()
                         Spacer()
                     }
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8999999761581421)))
-                        .frame(width: 334, height: 26)
-                        .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.10000000149011612)), radius: 4, x: 0, y: 4)
-                        HStack{
-                            Text("Add more classes...").font(.custom("Inter Medium", size: 12)).foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.55, blue: 0.62, alpha: 1))).lineSpacing(0.5)
-                            Image(systemName: "magnifyingglass")
-                        }
-                    }
+
+                    SearchBar(text: $searchText)
                     ScrollView{
                         VStack{
-                            ForEach(classes, id: \.self){ sclass in
+                            ForEach(searchText == "" ? classes : classes.filter(({$0.className.lowercased().contains(searchText.lowercased())})), id: \.self){ sclass in
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 10)
                                         .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.949999988079071)))
+                                    .overlay(
+                                        HStack{
+                                            Group{
+                                                Text(sclass.className + "\n")
+                                                    .font(.custom("Inter Medium", size: 12)).foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1))) + Text("\(sclass.credits) Credits; Major Requirement, Major Elective").font(.custom("Inter Medium", size: 10)).foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1)))
+                                            }.padding(.horizontal, 10)
+                                            Spacer()
+                                            Button {
+                                                let i = classes.firstIndex(where:{$0.className == sclass.className})
+                                                classes[i!].hearted.toggle()
+                                            } label: {
+                                                Image(systemName: sclass.hearted ? "heart.fill" : "heart").foregroundColor(Color(#colorLiteral(red: 1, green: 0, blue: 0.460709691, alpha: 1)))
+                                            }
+                                            .padding()
+                                            }
+                                    )
                                     .frame(width: 334, height: 45)
-                                    HStack{
-                                        Text(sclass.className + "\n").font(.custom("Inter Medium", size: 12)).foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1))) + Text("3 Credits; Major Requirement, Major Elective").font(.custom("Inter Medium", size: 10)).foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1)))
-                                        Button {
-                                            let i = classes.firstIndex(where:{$0.className == sclass.className})
-                                            classes[i!].hearted.toggle()
-                                        } label: {
-                                            Image(systemName: sclass.hearted ? "heart.fill" : "heart").foregroundColor(Color(#colorLiteral(red: 1, green: 0, blue: 0.460709691, alpha: 1)))
-                                            
-                                        }
-                                        }
-                                    
-                                       
+                                }.onTapGesture(perform: {
+                                    presentSheet.toggle()
+                                })
+                                .sheet(isPresented: $presentSheet) {
+                                    cs325View()
                                 }
                             }
                         }

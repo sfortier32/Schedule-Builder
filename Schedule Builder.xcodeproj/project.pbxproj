@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D4D711D281C4A3900DA729B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4D711C281C4A3800DA729B /* SearchBar.swift */; };
 		E41C2061281396400050F916 /* Schedule_BuilderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C2060281396400050F916 /* Schedule_BuilderApp.swift */; };
 		E41C2063281396400050F916 /* Survey1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C2062281396400050F916 /* Survey1.swift */; };
 		E41C2068281396420050F916 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E41C2067281396420050F916 /* Preview Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D4D711C281C4A3800DA729B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		9DEDF7D2281A3626006BEF53 /* Inter-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Italic.ttf"; sourceTree = "<group>"; };
 		9DEDF7D3281A3626006BEF53 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		9DEDF7D4281A3626006BEF53 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				E42941342814BFA70086D7FE /* Launch.swift */,
 				E4AC3E122815F308003C08F3 /* Survey Views */,
 				E4AC3E17281603D7003C08F3 /* Home */,
+				9D4D711C281C4A3800DA729B /* SearchBar.swift */,
 			);
 			path = "Actual App Code";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				E41C2063281396400050F916 /* Survey1.swift in Sources */,
 				E42941352814BFA70086D7FE /* Launch.swift in Sources */,
 				E4AC3E14281603BC003C08F3 /* Settings.swift in Sources */,
+				9D4D711D281C4A3900DA729B /* SearchBar.swift in Sources */,
 				E4760E3B28152AB40041B648 /* Homepage.swift in Sources */,
 				E4AC3E16281603C7003C08F3 /* Schedule.swift in Sources */,
 				E41C2061281396400050F916 /* Schedule_BuilderApp.swift in Sources */,
