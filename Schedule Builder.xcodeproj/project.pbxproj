@@ -21,7 +21,6 @@
 		E41C2063281396400050F916 /* Survey1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C2062281396400050F916 /* Survey1.swift */; };
 		E41C2068281396420050F916 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E41C2067281396420050F916 /* Preview Assets.xcassets */; };
 		E42941352814BFA70086D7FE /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42941342814BFA70086D7FE /* Launch.swift */; };
-		E42941412814C1EA0086D7FE /* Inter-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E429413F2814C1EA0086D7FE /* Inter-SemiBoldItalic.ttf */; };
 		E44E3B1B2814795100761DDD /* Color Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44E3B1A2814795100761DDD /* Color Assets.xcassets */; };
 		E470DA292818F24500CE992D /* cs326View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E470DA282818F24500CE992D /* cs326View.swift */; };
 		E470DA2B2818F25300CE992D /* info203View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E470DA2A2818F25300CE992D /* info203View.swift */; };
@@ -248,7 +247,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E42941412814C1EA0086D7FE /* Inter-SemiBoldItalic.ttf in Resources */,
 				9DAE886A281856F00026AAC8 /* Inter-MediumItalic.ttf in Resources */,
 				E41C2068281396420050F916 /* Preview Assets.xcassets in Resources */,
 				9DAE886B281856F00026AAC8 /* Inter-SemiBold.ttf in Resources */,

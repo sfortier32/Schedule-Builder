@@ -30,37 +30,51 @@ struct Schedule: View {
     @State private var searchText = "";
     @State private var presentSheet = false
     @State var classes = getClassArray()
+    @State var classes2 = getClassArray2()
     @State private var selected: schedClass = schedClass(className: "", classTime: "", xPos: 0, yPos: 0, color: .black, hearted: false, credits: 0)
+    
     var body: some View {
         switch showView {
         case "Schedule":
             ZStack(alignment: .top) {
-                Background()
+                Background2()
                 VStack(){
                     HStack{
-                        Text("Fall 2022").font(.custom("Inter Semi Bold", size: 25)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).lineSpacing(0.5).padding()
+                        Text("Fall 2022")
+                            .font(.custom("Inter-SemiBold", size: 27))
+                            .foregroundColor(.white)
+                            .lineSpacing(0.5)
+                            .padding(sides: [.left], value: 32)
+                            .padding(.top, 45)
                         Spacer()
                     }
 
                     SearchBar(text: $searchText)
+                        .shadow(color: Color.black.opacity(0.1), radius:5, x:0, y:-4)
                     ScrollView{
                         VStack{
                             ForEach(searchText == "" ? classes : classes.filter(({$0.className.lowercased().contains(searchText.lowercased())})), id: \.self){ sclass in
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.949999988079071)))
+                                        .fill(.white)
+                                        .shadow(color: Color.black.opacity(0.1), radius:5, x:0, y:-4)
                                     .overlay(
                                         HStack{
                                             Group{
                                                 Text(sclass.className + "\n")
-                                                    .font(.custom("Inter Medium", size: 12)).foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1))) + Text("\(sclass.credits) Credits; Major Requirement, Major Elective").font(.custom("Inter Medium", size: 10)).foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1)))
+                                                    .font(.custom("Inter -Medium", size: 12))
+                                                    .foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1))) + Text("\(sclass.credits) Credits; Major Requirement, Major Elective")
+                                                    .font(.custom("Inter-Medium", size: 10))
+                                                    .foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1)))
                                             }.padding(.horizontal, 10)
                                             Spacer()
                                             Button {
                                                 let i = classes.firstIndex(where:{$0.className == sclass.className})
                                                 classes[i!].hearted.toggle()
+                                                let k = classes2.firstIndex(where:{$0.className == sclass.className})
+                                                classes2[k!].hearted.toggle()
                                             } label: {
-                                                Image(systemName: sclass.hearted ? "heart.fill" : "heart").foregroundColor(Color(#colorLiteral(red: 1, green: 0, blue: 0.460709691, alpha: 1)))
+                                                Image(systemName: sclass.hearted ? "checkmark.square.fill" : "checkmark.square").foregroundColor(Color.gray)
                                             }
                                             .padding()
                                             }
@@ -69,7 +83,7 @@ struct Schedule: View {
                                                 presentSheet.toggle()
                                             })
                                     )
-                                    .frame(width: 334, height: 45)
+                                    .frame(width: 358, height: 45)
                                 }
                                 .sheet(isPresented: $presentSheet) {
                                     switch selected.className{
@@ -81,16 +95,19 @@ struct Schedule: View {
                                     }
                                 }
                             }
-                        }
-                    }.padding(.bottom, 25).frame(height: 222)
-                    
+                        }.frame(maxWidth: .infinity).padding(.bottom, 60)
+                    }.frame(height: 222)
                 }
+                
                 ZStack{
                     Rectangle()
                         .fill(Color.white)
-                        .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.10000000149011612)), radius:4, x:0, y:-4)
+                        .shadow(color: Color.black.opacity(0.1), radius:5, x:0, y:-4)
                         .frame(width: 800, height: 600).position(x: 100, y: 600)
-                    HStack(){
+                    
+                    Grid()
+                    
+                    HStack{
                         Group{
                             VStack(alignment: .leading){
                                 Spacer()
@@ -101,9 +118,11 @@ struct Schedule: View {
                                         Text("Wed")
                                         Text("Thurs")
                                         Text("Fri")
-                                    }.padding(.trailing, 15)
-                                }.font(.custom("Inter Semi Bold", size: 21)).foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1)))
+                                    }.padding(.trailing, 18)
+                                }.font(.custom("Inter-Medium", size: 17))
+                                    .foregroundColor(Color(#colorLiteral(red: 0.24, green: 0.26, blue: 0.29, alpha: 1)))
                                     .padding(.leading, 70)
+                                    .padding(.bottom, 5)
                                 Group {
                                     Text("8AM")
                                     Text("9AM")
@@ -115,9 +134,9 @@ struct Schedule: View {
                                     Text("3PM")
                                     Text("4PM")
                                     Text("5PM")
-                                }
-                                .padding(.bottom, 15.0)
-                                    .font(.custom("Inter Semi Bold", size: 15)).foregroundColor(Color(#colorLiteral(red: 0.33, green: 0.36, blue: 0.4, alpha: 1)))
+                                }.padding(.bottom, 15)
+                                    .font(.custom("Inter-Medium", size: 13))
+                                    .foregroundColor(Color(#colorLiteral(red: 0.33, green: 0.36, blue: 0.4, alpha: 1)))
                             }.padding(.bottom, 90)
                             .padding(.leading, 15)
                         }
@@ -126,17 +145,34 @@ struct Schedule: View {
                     
                     ForEach(classes.filter({$0.hearted}), id: \.self){ sclass in
                         ZStack {
-                                        RoundedRectangle(cornerRadius: 10)
-                                        .fill(sclass.color)
-                                        .frame(width: 70, height: 40)
-                                Group{
-                                    VStack{
-                                        Text(sclass.className)
-                                        Text(sclass.classTime)
-                                    }
-                                }.font(.custom("Inter Semi Bold", size: 12)).foregroundColor(Color(.black))
-                                    }.position(x: CGFloat(sclass.xPos), y: CGFloat(sclass.yPos))
-                    }
+                            RoundedRectangle(cornerRadius: 6)
+                            .fill(sclass.color)
+                            .frame(width: 55, height: 40)
+                            Group{
+                                VStack {
+                                    Text(sclass.className)
+                                    Text(sclass.classTime)
+                                }
+                            }.font(.custom("Inter-Medium", size: 9))
+                                .foregroundColor(Color(.black))
+                        }.position(x: CGFloat(sclass.xPos), y: CGFloat(sclass.yPos) + 8)
+                    } //end zstack
+                    
+                    ForEach(classes2.filter({$0.hearted}), id: \.self){ sclass in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 6)
+                            .fill(sclass.color)
+                            .frame(width: 55, height: 40)
+                            Group{
+                                VStack {
+                                    Text(sclass.className)
+                                    Text(sclass.classTime)
+                                }
+                            }.font(.custom("Inter-Medium", size: 9))
+                                .foregroundColor(Color(.black))
+                        }.position(x: CGFloat(sclass.xPos), y: CGFloat(sclass.yPos) + 8)
+                    } //end zstack
+                    
                     Rectangle()
                         .fill(Color.navBarGray)
                         .frame(width: 420, height: 50)
@@ -145,7 +181,7 @@ struct Schedule: View {
                     Group {
                         Rectangle()
                         .frame(width: 420, height: 100)
-                        .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: -5)
+                        .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: -5)
                         .foregroundColor(.navBarGray)
                         .overlay(
                             HStack {
@@ -179,6 +215,7 @@ struct Schedule: View {
                                 .padding(.bottom, 20)
                         )
                 }.position(x: 207, y: 800)
+                    
             } //end zstack
         }
         case "Homepage" :
@@ -190,3 +227,38 @@ struct Schedule: View {
         }
     }
 }
+
+struct Grid : View {
+    var body: some View {
+        thinLine()
+            .position(x: 223, y: 359)
+        thinLine()
+            .position(x: 223, y: 396)
+        thinLine()
+            .position(x: 223, y: 435)
+        thinLine()
+            .position(x: 223, y: 473)
+        thinLine()
+            .position(x: 223, y: 511)
+        thinLine()
+            .position(x: 223, y: 549)
+        thinLine()
+            .position(x: 223, y: 587)
+        thinLine()
+            .position(x: 223, y: 625)
+        thinLine()
+            .position(x: 223, y: 663)
+        thinLine()
+            .position(x: 223, y: 701)
+    }
+}
+
+struct thinLine : View {
+    var body : some View {
+        Rectangle()
+            .foregroundColor(Color.black.opacity(0.3))
+            .frame(width: 320, height: 1)
+    }
+}
+
+

@@ -16,11 +16,11 @@ struct SearchBar: View {
         HStack {
  
             TextField("Add more classes...", text: $text)
-                .font(.custom("Inter Medium", size: 12)).foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.55, blue: 0.62, alpha: 1))).lineSpacing(0.5)
-                .frame(width: 334, height: nil)
-                .padding(4)
-                .padding(.horizontal, 20)
-                .background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8999999761581421)))
+                .font(.custom("Inter-Medium", size: 13)).foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.55, blue: 0.62, alpha: 1))).lineSpacing(0.5)
+                .frame(width: 325, height: nil)
+                .padding(6)
+                .padding(.horizontal, 10)
+                .background(.white)
                 .cornerRadius(10)
                 .padding(.horizontal, 1.0)
                 .onTapGesture {
